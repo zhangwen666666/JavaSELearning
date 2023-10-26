@@ -164,6 +164,7 @@ class BookTest{
 Customer [Smith，Jane] has a account ：id is 1000 annualInterestRate is 1.23% balance is 1140.0
  */
  
+ /*
  class Account{
 	 String id;	//账户
 	 double balance; //余额
@@ -231,3 +232,107 @@ Customer [Smith，Jane] has a account ：id is 1000 annualInterestRate is 1.23% ba
 		", annualInterestRate is " + (c.account.annualInterestRate*100) + "%, balance is " + c.account.balance);
 	 }
  }
+ */
+ 
+ 
+ /*
+ 三、(封装)已知一个类 Student 代码如下：
+class Student{
+	String name;
+	int age;
+	String address;
+	String zipCode;
+	String mobile;
+}
+要求：
+	1、把Student 的属性都作为私有，并提供get/set 方法以及适当的构造方法。
+	2、为Student 类添加一个getPostAddress 方法，要求返回Student 对象的地址和邮编。
+ */
+ 
+ class Student{
+	private String name;
+	private int age;
+	private String address;
+	private String zipCode;
+	private String mobile;
+	
+	public Student(){} //无参构造
+	
+	//有参构造
+	public Student(String name, int age, String address, String zipCode, String mobile){
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.zipCode = zipCode;
+		this.mobile = mobile;
+	}
+	
+	//name属性
+	public void setName(String name){
+		this.name = name;
+	}
+	public String getName(){
+		return this.name;
+	}
+	
+	//age属性
+	public void setAge(int age){
+		this.age = age;
+	}
+	public int getAge(){
+		return this.age;
+	}
+	
+	//address属性
+	public void setAddress(String address){
+		this.address = address;
+	}
+	public String getAddress(){
+		return this.address;
+	}
+	
+	//zipCode属性
+	public void setZipCode(String zipCode){
+		this.zipCode = zipCode;
+	}
+	public String getZipCode(){
+		return this.zipCode;
+	}
+	
+	//mobile属性
+	public void setMobile(String mobile){
+		this.mobile = mobile;
+	}
+	public String getMobile(){
+		return this.mobile;
+	}
+	
+	public Result getPostAddress(){
+		Result result = new Result();
+		result.address = this.address;
+		result.zipCode = this.zipCode;
+		return result;
+	}
+}
+
+class Result{
+	String address;
+	String zipCode;
+}
+
+class TestStudent{
+	public static void main(String[] args){
+		Student s = new Student();
+		s.setName("张三");
+		s.setAge(18);
+		s.setAddress("山西省大同市");
+		s.setZipCode("037001");
+		s.setMobile("13935264857");
+		
+		s.getAge();
+		System.out.println("姓名：" + s.getName() + "\t年龄:" + s.getAge() + "\t地址:" + s.getAddress() + "\t邮编：" + s.getZipCode() + "\t电话：" + s.getMobile());
+		
+		Result result = s.getPostAddress();
+		System.out.println("地址:" + result.address + "\t邮编：" + result.zipCode);
+	}
+}
