@@ -24,6 +24,6 @@ public class BufferedReaderTest02 {
 
         FileWriter fw = new FileWriter("E:\\02.txt");
 //        FileOutputStream fos = new FileOutputStream(fw);
-        BufferedOutputStream bos = new BufferedOutputStream(fw);
+        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("E:\\02.txt"));
     }
 }
