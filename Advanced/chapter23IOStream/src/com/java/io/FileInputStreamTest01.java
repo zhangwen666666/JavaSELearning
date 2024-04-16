@@ -10,7 +10,7 @@ public class FileInputStreamTest01 {
         //创建文件字节流对象
         //E:\01.py
         try {
-            fis = new FileInputStream("E:\\01.py");
+            fis = new FileInputStream("E:\\file\\01.py");
 
             int readData = fis.read(); //该方法的返回值是读取到的字节本身
             System.out.println(readData);
