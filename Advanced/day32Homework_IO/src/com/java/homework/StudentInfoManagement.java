@@ -18,13 +18,16 @@ import java.util.Set;
 public class StudentInfoManagement {
 
     //保存学生信息的HashMap集合
-    private static HashMap<Integer, Student> students = null;
+    private static HashMap<Integer, Student> students = loadFile();
+
+    public static HashMap<Integer, Student> getStudents() {
+        return students;
+    }
 
     //判断students集合从加载到内存之后有没有被修改
     private static boolean isModify = false;
 
     public static void main(String[] args) {
-        students = loadFile();
         boolean flag = true;
         menu();
         do {
@@ -58,7 +61,7 @@ public class StudentInfoManagement {
     }
 
     //打印功能菜单
-    private static void menu() {
+    public static void menu() {
         System.out.println("欢迎使用学生信息管理系统，请认真阅读以下使用说明：");
         System.out.println("请输入不同的功能编号来选择不同的功能");
         System.out.println("[0]退出学生信息管理系统");
@@ -104,7 +107,7 @@ public class StudentInfoManagement {
         System.out.print("请输入你要删除的学生的学号：");
         Scanner scanner = new Scanner(System.in);
         int no = scanner.nextInt();
-        if(!isExist(no)){
+        if (!isExist(no)) {
             System.out.println("不存在该学生");
             return;
         }
@@ -112,13 +115,12 @@ public class StudentInfoManagement {
         System.out.println("是否确认删除该学生, 输入0表示取消，其他表示确认");
         System.out.print("请输入：");
         int flag = scanner.nextInt();
-        if(flag == 0){
+        if (flag == 0) {
             System.out.println("取消删除该学生");
-        }
-        else{
+        } else {
             students.remove(no);
             System.out.println("成功删除该学生");
-            isModify=true;
+            isModify = true;
         }
     }
 
@@ -127,7 +129,7 @@ public class StudentInfoManagement {
         System.out.print("请输入你要查看的学生的学号：");
         Scanner scanner = new Scanner(System.in);
         int no = scanner.nextInt();
-        if(!isExist(no)){
+        if (!isExist(no)) {
             System.out.println("不存在该学生");
             return;
         }
@@ -135,12 +137,12 @@ public class StudentInfoManagement {
     }
 
     //判断某个学生是否存在
-    private static boolean isExist(int no){
+    private static boolean isExist(int no) {
         return students.get(no) != null;
     }
 
     //打印学生信息
-    private static void printStudentInfo(int no){
+    private static void printStudentInfo(int no) {
         System.out.println("学号\t\t姓名\t\t性别\t\t生日");
         System.out.println(students.get(no));
     }
