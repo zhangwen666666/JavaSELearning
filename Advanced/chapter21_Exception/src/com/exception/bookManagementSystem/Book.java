@@ -22,6 +22,9 @@ abstract public class Book {
     }
 
     private static boolean isISBNLegal(String ISBN) {
+        return ISBN.matches("\\d{3}-\\d{1}-\\d{3}-\\d{5}-\\d{1}");
+        /*
+        System.out.println(ISBN.matches("\\d{3}-\\d{1}-\\d{3}-\\d{5}-\\d{1}"));
         if (ISBN.length() != 17) return false;
         for (int i = 0; i < ISBN.length(); i++) {
             char temp = ISBN.charAt(i);
@@ -32,6 +35,7 @@ abstract public class Book {
             }
         }
         return true;
+         */
     }
 
     public String getName() {

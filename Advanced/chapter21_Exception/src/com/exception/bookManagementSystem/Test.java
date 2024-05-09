@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Test {
+    /*
     public static void main(String[] args) {
         menu();
         Stock stock = new Stock(new ArrayList<BookItem>());
@@ -84,6 +85,8 @@ public class Test {
             }
         }
     }
+     */
+
 
     private static void menu() {
         System.out.println("---------欢迎来到图书管理系统------------");
@@ -94,5 +97,32 @@ public class Test {
         System.out.println("----------   [5]删除图书    ------------");
         System.out.println("----------  [6]显示所有图书  ------------");
         System.out.println("----------   [0]退出系统    ------------");
+    }
+
+    public static void main(String[] args) {
+        String str1 = "javac++cpythonjavaphp".replace("java", "golang");
+        System.out.println(str1);//golangc++cpythongolangphp
+        String str2 = "a1c23b4n35d76f9q0".replaceAll("\\d", "");
+        System.out.println(str2);//acbndfq
+        String[] split = "a123d321n123jldj32ka".split("\\d+");
+        for (String s : split) {
+            System.out.print(s);//202405081711
+        }
+        System.out.println();
+
+        String str = "1813505899@qq.com";
+        System.out.println(str.matches("[1-9]{1}[0-9]{4,}@[q]{2}\\.com"));
+
+        String s1 = new String("abc");
+        System.out.println(s1);
+        StringBuilder s2 = new StringBuilder("abc");
+        System.out.println(s2);
+        //equals方法在判断时会先判断s1和s2是否是同一个类型
+        //这里由于s1和s2是两种不同的类型，所以equals方法会直接返回false
+        System.out.println(s1.equals(s2));
+
+        StringBuilder ss1 = new StringBuilder("ssss");
+        StringBuilder ss2 = ss1.append("hello");
+        System.out.println(ss1==ss2);
     }
 }
