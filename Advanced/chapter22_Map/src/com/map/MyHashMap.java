@@ -1,6 +1,9 @@
 package com.map;
 
 import java.util.Objects;
+import java.util.Map;
+import java.util.LinkedHashMap;
+
 
 public class MyHashMap<K, V> {
     private Node<K, V>[] tables;
@@ -146,6 +149,8 @@ class Main {
 
         System.out.println(map);
         System.out.println(map.get(new Animal(7)));
+        Map<Integer,String> map1 = new LinkedHashMap<>();
+        map1.put(null,null);
     }
 }
 
