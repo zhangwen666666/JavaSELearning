@@ -8,9 +8,9 @@ public class GenericTest03 {
     public static void main(String[] args) throws Exception {
         Class<User> c = User.class;
         //获取属性上的泛型，需要先获取属性
-        Field map = c.getDeclaredField("map");
+        Field mapField = c.getDeclaredField("map");
         //获取属性上的泛型
-        Type genericType = map.getGenericType();
+        Type genericType = mapField.getGenericType();
         //如果使用了泛型
         if(genericType instanceof ParameterizedType){
             //向下转型

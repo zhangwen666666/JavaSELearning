@@ -5,9 +5,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.Scanner;
 
 class C{
-    public Map<Integer,Boolean> m(){
+    public Map<Integer, Scanner> m(){
         return null;
     }
 }

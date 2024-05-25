@@ -20,7 +20,7 @@ public class GenericTest04 {
                 Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
                 for (Type type : actualTypeArguments) {
                     System.out.println(type.getTypeName());
-                    //java.lang.String
+                    //java.lang.Object
                     //java.lang.Integer
                     //java.lang.Object
                 }

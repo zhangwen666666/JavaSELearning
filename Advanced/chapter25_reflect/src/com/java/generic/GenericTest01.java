@@ -23,7 +23,8 @@ public class GenericTest01 {
             //for循环的输出结果：
             //class java.lang.String
             //class java.lang.Integer
-            //class java.lang.Double
+            //class java.lang.Object
+            //class java.lang.Boolean
         }
     }
 }

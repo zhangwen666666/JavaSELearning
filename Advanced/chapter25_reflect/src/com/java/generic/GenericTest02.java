@@ -6,6 +6,7 @@ import java.lang.reflect.Type;
 public class GenericTest02 {
     public static void main(String[] args) {
         Class<Bird> c = Bird.class;
+
         Type[] genericInterfaces = c.getGenericInterfaces();
         for(Type genericInterface:genericInterfaces){
             if(genericInterface instanceof ParameterizedType){

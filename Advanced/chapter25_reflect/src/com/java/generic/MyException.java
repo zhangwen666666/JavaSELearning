@@ -1,7 +1,7 @@
 package com.java.generic;
 
-public class MyException<X extends Exception> {
-    public void m() throws X{
+public class MyException<Y extends Exception> {
+    public void m() throws Y{
 
     }
 }

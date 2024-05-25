@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 class Student {
-    public Student(List<Boolean> list, Map<Integer, Double> map) {
+    public Student(List<Object> list, Map<Integer, Double> map) {
     }
 }
 
