@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--targetNamespace: 声明约束文档的地址(命名空间)-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.itcast.cn"
+        elementFormDefault="qualified" >
+    <!--约束根元素的名字是书架-->
+    <element name="书架">
+        <!--在complexType中声明子元素-->
+        <complexType>
+            <!--sequence代表子元素的顺序是什么-->
+            <!--maxOccurs="unbounded": 子元素可以有任意多个-->
+            <sequence maxOccurs="unbounded">
+                <element name="书">
+                    <complexType>
+                        <sequence>
+                            <!--子元素必须是书名，类型是string-->
+                            <element name="书名" type="string" />
+                            <element name="作者" type="string" />
+                            <element name="售价" type="double" />
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

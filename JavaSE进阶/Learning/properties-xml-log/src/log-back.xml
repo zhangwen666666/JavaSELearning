@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true">
+    <!-- CONSOLE表示当前的日志信息是可以输出到控制台的 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!--输出流对象 默认System.out 改为System.err-->
+        <target>System.out</target>
+        <encoder>
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level表示从左显示5个字符宽度 %msg：日志消息 %n换行-->
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %c [%thread] : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- FILE是输出的方向通向文件的 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy" >
+            <fileNamePattern>F:/log/logfile.log-%d{yyyy-MM-dd}.log%i.gz</fileNamePattern>
+            <!--拆分文件大小-->
+            <maxFileSize>1MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>utf-8</charset>
+        </encoder>
+        <!--日志输出路径-->
+        <file>F:/log/logfile.log</file>
+        <!--指定日志文件拆分和压缩规则-->
+    </appender>
+
+    <!-- 根级别的日志配置 -->
+    <root level="ALL">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
